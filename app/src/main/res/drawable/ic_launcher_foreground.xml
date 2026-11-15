@@ -6,60 +6,30 @@
     android:viewportWidth="108"
     android:viewportHeight="108">
 
-    <!-- Ambient Orbital Aura Glow -->
-    <path
-        android:pathData="M54,54m-38,0a38,38 0 1,0 76,0a38,38 0 1,0 -76,0"
-        android:strokeWidth="1.5"
-        android:strokeAlpha="0.4">
-        <aapt:attr name="android:strokeColor">
-            <gradient
-                android:type="sweep"
-                android:centerX="54"
-                android:centerY="54"
-                android:startColor="#0000F5FF"
-                android:centerColor="#FFFF007F"
-                android:endColor="#0000F5FF" />
-        </aapt:attr>
-    </path>
+    <!-- Antigravity Arc / Loop Path: Exact geometry scaled & centered into 108dp canvas -->
+    <!-- Original path: M21.751 22.607c1.34 1.005 3.35.335 1.508-1.508C17.73 15.74 18.904 1 12.037 1 5.17 1 6.342 15.74.815 21.1c-2.01 2.009.167 2.511 1.507 1.506 5.192-3.517 4.857-9.714 9.715-9.714 4.857 0 4.522 6.197 9.714 9.715z -->
+    <!-- Scaled by 3.2 and translated (X+15.5, Y+16) to center perfectly in 108x108 adaptive canvas -->
 
-    <!-- Outer Precision Orbit Ring (Antigravity Field) -->
-    <path
-        android:pathData="M54,20 C72.78,20 88,35.22 88,54 C88,72.78 72.78,88 54,88 C35.22,88 20,72.78 20,54 C20,35.22 35.22,20 54,20 Z"
-        android:strokeWidth="2.8"
-        android:strokeColor="#FF00F5FF"
-        android:strokeAlpha="0.85" />
-
-    <!-- Center Antigravity Core Diamond / Delta Shape -->
-    <path
-        android:pathData="M54,28 L76,54 L54,80 L32,54 Z">
-        <aapt:attr name="android:fillColor">
-            <gradient
-                android:type="linear"
-                android:startX="54"
-                android:startY="28"
-                android:endX="54"
-                android:endY="80">
-                <item android:offset="0.0" android:color="#FF00F5FF" />
-                <item android:offset="0.5" android:color="#FF7B2CBF" />
-                <item android:offset="1.0" android:color="#FFFF007F" />
-            </gradient>
-        </aapt:attr>
-    </path>
-
-    <!-- Inner Core Highlight -->
-    <path
-        android:pathData="M54,36 L68,54 L54,72 L40,54 Z"
-        android:fillColor="#80FFFFFF" />
-
-    <!-- Pure Floating Core Light (Quantum Singularity) -->
-    <path
-        android:pathData="M54,54m-4.5,0a4.5,4.5 0 1,0 9,0a4.5,4.5 0 1,0 -9,0"
-        android:fillColor="#FFFFFFFF" />
-
-    <!-- Horizontal Antigravity Horizon Vector -->
-    <path
-        android:pathData="M24,54 L84,54"
-        android:strokeWidth="1.2"
-        android:strokeColor="#FFFFFFFF"
-        android:strokeAlpha="0.75" />
+    <group
+        android:scaleX="3.2"
+        android:scaleY="3.2"
+        android:translateX="15.5"
+        android:translateY="16.0">
+        <path
+            android:pathData="M21.751,22.607c1.34,1.005 3.35,0.335 1.508,-1.508C17.73,15.74 18.904,1 12.037,1 5.17,1 6.342,15.74 0.815,21.1c-2.01,2.009 0.167,2.511 1.507,1.506 5.192,-3.517 4.857,-9.714 9.715,-9.714 4.857,0 4.522,6.197 9.714,9.715z">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:type="linear"
+                    android:startX="1.0"
+                    android:startY="12.0"
+                    android:endX="23.0"
+                    android:endY="12.0">
+                    <item android:offset="0.0" android:color="#FF4285F4" />
+                    <item android:offset="0.33" android:color="#FFEA4335" />
+                    <item android:offset="0.66" android:color="#FFFBBC04" />
+                    <item android:offset="1.0" android:color="#FF34A853" />
+                </gradient>
+            </aapt:attr>
+        </path>
+    </group>
 </vector>

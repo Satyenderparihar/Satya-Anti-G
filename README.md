@@ -2,11 +2,11 @@
 
 <img src="docs/readme/icon.svg" alt="AntiGem app icon" width="112">
 
-# Satya Anti-G (Antigravity)
+# Satya Anti-G (Antigraviity)
 
 *A full coding environment and autonomous AI workspace, light enough to carry in your pocket.*
 
-**An AI coding workspace for Android: Antigravity, Claude Code, OpenCode and Codex agents, a real Linux terminal, a code editor and a browser the agent can control, all in one app.**
+**An AI coding workspace for Android: Antigraviity, Claude Code, OpenCode and Codex agents, a real Linux terminal, a code editor and a browser the agent can control, all in one app.**
 
 [![Kotlin](https://img.shields.io/badge/Kotlin-Jetpack%20Compose-7F52FF?style=flat-square&logo=kotlin&logoColor=white)](https://developer.android.com/jetpack/compose)
 [![Go](https://img.shields.io/badge/Bridge-Go-00ADD8?style=flat-square&logo=go&logoColor=white)](https://go.dev)
@@ -42,7 +42,7 @@ A full tour on a real phone: launch, chats, settings and themes, then Claude Cod
     <td colspan="4" align="center"><b>🤖 Agents that actually code</b></td>
   </tr>
   <tr>
-    <td align="center" width="25%"><img src="docs/readme/screens/agent_picker.webp" alt="Pick Antigravity, Claude Code, OpenCode or Codex" width="200"><br><sub>Four agents, one app</sub></td>
+    <td align="center" width="25%"><img src="docs/readme/screens/agent_picker.webp" alt="Pick Antigraviity, Claude Code, OpenCode or Codex" width="200"><br><sub>Four agents, one app</sub></td>
     <td align="center" width="25%"><img src="docs/readme/screens/chat_agent_working.webp" alt="Claude Code working: thinking, to-do list and file edits" width="200"><br><sub>Thinking, to-dos and live edits</sub></td>
     <td align="center" width="25%"><img src="docs/readme/screens/chat_agent_summary.webp" alt="Claude Code summary with token stats" width="200"><br><sub>Tool cards and token stats</sub></td>
     <td align="center" width="25%"><img src="docs/readme/screens/model_picker_usage.webp" alt="Model picker with 5-hour and weekly plan usage" width="200"><br><sub>Models and plan usage</sub></td>
@@ -73,7 +73,7 @@ A full tour on a real phone: launch, chats, settings and themes, then Claude Cod
 
 AntiGem runs four coding agents on your phone:
 
-- **Antigravity (`agy`)**: Google's official `agy` CLI, installed with Google's own installer, runs inside the app's Linux environment.
+- **Antigraviity (`agy`)**: Google's official `agy` CLI, installed with Google's own installer, runs inside the app's Linux environment.
 - **Claude Code**: Anthropic's official `claude` CLI runs inside the app's Linux environment, and the app talks to it over its stream-json protocol, with one CLI process per chat.
 - **OpenCode**: the open-source coding agent. It works with 200+ providers with your own keys, any OpenAI-compatible API, and free models.
 - **Codex**: OpenAI's official `codex` CLI runs inside the app's Linux environment, and the app talks to it through its `app-server` protocol, the same one the Codex VS Code extension uses. Sign in with your ChatGPT account.
@@ -102,7 +102,7 @@ You are not tied to one company's models. Two of the agents can use other provid
 - Test the connection, then fetch the provider's model list. For OpenRouter you can fetch only the free models that can call tools.
 - Their models sit in the model picker next to Claude's own, so you can switch per chat.
 
-Antigravity uses your Google account and Codex your ChatGPT account.
+Antigraviity uses your Google account and Codex your ChatGPT account.
 
 ### Agents and chat
 - Live streaming replies, collapsible thinking, tool cards, diffs and subagent progress.
@@ -116,7 +116,7 @@ Antigravity uses your Google account and Codex your ChatGPT account.
 - A floating chat bubble you can use over other apps.
 
 ### Jarvis voice assistant
-Use the whole app hands-free by voice, on top of Antigravity, Claude Code, OpenCode or Codex. Full guide: **[docs/jarvis.md](docs/jarvis.md)**.
+Use the whole app hands-free by voice, on top of Antigraviity, Claude Code, OpenCode or Codex. Full guide: **[docs/jarvis.md](docs/jarvis.md)**.
 - Open projects and files, switch screens, models and settings (theme too), search code, read chats, check your usage, set timers, and ask how the app works.
 - **Tasks:** hand over big jobs ("fix the failing tests and tell me when it's done"). Each runs in its own chat; Jarvis tells you when it finishes, fails, gets stuck, needs an approval or asks a question, and you can redirect or stop it by voice.
 - Approvals read out loud and answered by voice, with policies from "ask me each time" to "auto except risky".
@@ -132,12 +132,12 @@ Use the whole app hands-free by voice, on top of Antigravity, Claude Code, OpenC
 - Usage at a glance: prompt-cache timer, context window use, 5-hour and weekly plan limits, and token counts for each reply.
 - Settings for chat defaults, permission rules, the command sandbox, MCP servers, plugins and marketplaces, `CLAUDE.md` and Claude's memory.
 
-### Antigravity
+### Antigraviity
 - Runs Google's official `agy` CLI.
 - Model picker with live quota, Google sign-in and account details.
 - Security presets and per-project rules for command auto-run and file access.
 - MCP servers, skills and Google plugins.
-- **Cloud agents**: run Antigravity chats on a Google cloud machine (Remote Agents) instead of the phone.
+- **Cloud agents**: run Antigraviity chats on a Google cloud machine (Remote Agents) instead of the phone.
 
 ### OpenCode
 - The open-source coding agent, run through the bridge: its own CLI and its own providers.
@@ -206,7 +206,7 @@ Each one is a one-tap preset in **Settings → MCP Servers**, for every agent.
 
 ### Connect to PC (with AntiGem for VS Code)
 Use the agents running on your PC from your phone. [AntiGem for VS Code](https://github.com/Satyenderparihar/Satya-Anti-G_vscode_extension) runs them on the PC, and the app becomes a second screen for the same chats.
-- **Same chats on both:** start a chat in VS Code and continue it on the phone, or the other way round. Replies stream live on both, and every agent (Antigravity, Claude Code, Codex, OpenCode) works, with its subagents, images and files.
+- **Same chats on both:** start a chat in VS Code and continue it on the phone, or the other way round. Replies stream live on both, and every agent (Antigraviity, Claude Code, Codex, OpenCode) works, with its subagents, images and files.
 - **Pair once, no typing of addresses:** in VS Code open **Settings → Connect phone → Start pairing**. On the phone, turn on **Settings → Connect to PC**, tap **Add a PC**, pick the PC from **Nearby PCs** and type the 6-digit code it shows. If the PC is not listed (guest Wi-Fi), type the address shown on the PC.
 - **Switch in one tap:** the PC button in the side bar lists your paired PCs; pick one, or go back to **Use this phone**. Several PCs can be paired.
 - **Copy files between phone and PC:** in this mode the Files screen has a **This phone** tab next to the PC's files. Copy or cut on one side, paste on the other, folders too.
@@ -315,7 +315,7 @@ Then open Termux:X11. Don't install `termux-x11-nightly` from x11-repo: it only 
                         │ HTTP / WebSocket                │ HTTP / WS
                         │ localhost:1234                  │ localhost:1235
 ┌───────────────────────┴────────────────────────┐   ┌────┴────────────────┐
-│              agy_ide_bridge (Go)               │   │   Antigravity hub   │
+│              agy_ide_bridge (Go)               │   │   Antigraviity hub   │
 │      Git · files · plugins · agent relays      ├──►│      agy --hub      │
 │       starts and supervises every agent        │   │  (Google's agy CLI) │
 └───────┬──────────────────┬──────────────────┬──┘   └─────────────────────┘
@@ -332,7 +332,7 @@ Then open Termux:X11. Don't install `termux-x11-nightly` from x11-repo: it only 
 
 ## Server mode (run it on a VPS)
 
-By default everything runs on the phone. In **Server mode** the heavy part moves to a Linux server that you own (a VPS, a home server, a spare PC): the **IDE bridge**, the **Antigravity hub (`agy`)**, **Claude Code**, your **projects, files, git and the shell** all live there, and AntiGem on the phone only shows the UI. It is the same app and the same interface, but the chats, the files and the agents' accounts live on the server (they are separate from any chats you have in local mode), so the agents keep working when the phone sleeps, and the phone stays light.
+By default everything runs on the phone. In **Server mode** the heavy part moves to a Linux server that you own (a VPS, a home server, a spare PC): the **IDE bridge**, the **Antigraviity hub (`agy`)**, **Claude Code**, your **projects, files, git and the shell** all live there, and AntiGem on the phone only shows the UI. It is the same app and the same interface, but the chats, the files and the agents' accounts live on the server (they are separate from any chats you have in local mode), so the agents keep working when the phone sleeps, and the phone stays light.
 
 It is **not a separate APK**. Both the `termux` and the `standard` variant can use it: open **Settings → Servers** and pick **SSH tunnel** or **Server** under *Where the server runs*. The Linux environment on the phone is not needed in this mode. (Default ports differ per variant: `termux` uses 1234 / 1235 for the bridge / hub, `standard` uses 1236 / 1237.)
 
@@ -373,10 +373,10 @@ phone (AntiGem app)                              your server
 
 1. **Prepare the server:** a normal (non-root) user, `sshd`, `tmux`, `git`. Use a **dedicated VPS and a dedicated user**.
 2. **Get the bridge on the server:** the app does **not** contain it and never uploads anything. Build it once with Go (`CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build` in `agy_ide_bridge/`, or `arm64`), copy it to `~/.antigem/agy_ide_bridge` and `chmod +x` it. Build it from the **same version as your app**: the app compares versions on every launch and tells you when the bridge is out of date.
-3. **Install the agents on the server:** `curl -fsSL https://antigravity.google/cli/install.sh | bash` for Antigravity, `curl -fsSL https://claude.ai/install.sh | bash` for Claude Code (both end up in `~/.local/bin`). You can also install `agy` from the app (**Settings → Agents**) once the bridge is running.
+3. **Install the agents on the server:** `curl -fsSL https://antigravity.google/cli/install.sh | bash` for Antigraviity, `curl -fsSL https://claude.ai/install.sh | bash` for Claude Code (both end up in `~/.local/bin`). You can also install `agy` from the app (**Settings → Agents**) once the bridge is running.
 4. **Choose how the phone reaches it.** *SSH tunnel* (recommended): nothing to do, skip to step 5. *Server* mode: put a reverse proxy with TLS in front (nginx, Caddy or Apache) on two sub-domains, one for the bridge and one for the hub, add the **proxy access header** (a second secret that the proxy checks), and open only SSH, 80 and 443 in the firewall.
 5. **In the app (Settings → Servers):** pick **SSH tunnel** (the addresses are filled in as `http://127.0.0.1:<port>`; keep the default ports unless you changed them) or **Server** (enter your two addresses and, optionally, the proxy access header). Then enter the SSH host, user and key, check the server paths (they are pre-filled with the defaults), **Save**, **Reopen**. The app connects over SSH, opens the tunnels, starts the bridge, and shows its state and log.
-6. **Sign in** to Antigravity (a Google redirect page that you paste back into the app) and to Claude Code, and start chatting.
+6. **Sign in** to Antigraviity (a Google redirect page that you paste back into the app) and to Claude Code, and start chatting.
 
 **The full, step-by-step guide, with the two connection modes compared, ready-to-paste nginx, Caddy and Apache configurations, the app settings explained field by field, adb from the server to the phone, updating, and debugging, is here: 👉 [docs/remote-server.md](docs/remote-server.md).**
 
@@ -451,7 +451,7 @@ AntiGem uses [TelemetryDeck](https://telemetrydeck.com) only to count how many p
 
 ## Disclaimer
 
-AntiGem is an independent project. It is not affiliated with, endorsed by or sponsored by Google, Anthropic, OpenAI, OpenCode or any other AI provider. Antigravity, Claude, Claude Code, Codex and other product names are trademarks of their owners and are used here only to say which tools the app works with.
+AntiGem is an independent project. It is not affiliated with, endorsed by or sponsored by Google, Anthropic, OpenAI, OpenCode or any other AI provider. Antigraviity, Claude, Claude Code, Codex and other product names are trademarks of their owners and are used here only to say which tools the app works with.
 
 AntiGem does not include these tools. You install each one from its official source and sign in with that tool's own login, and the app gives you an interface on top of it. Your use of each tool and account is covered by that provider's own terms, the same as when you use the tool from a terminal.
 
