@@ -213,7 +213,7 @@ class LocalPtySession(
                     "HOME=/root",
                     "USER=root",
                     "LOGNAME=root",
-                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "PATH=/root/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
                     "TERM=xterm-256color",
                     "COLORTERM=truecolor",
                     "LANG=C.UTF-8",
@@ -238,7 +238,7 @@ class LocalPtySession(
                         "HOME=/root",
                         "USER=root",
                         "LOGNAME=root",
-                        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                        "PATH=/root/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
                         "TERM=xterm-256color",
                         "COLORTERM=truecolor",
                         "LANG=C.UTF-8",
@@ -1245,10 +1245,6 @@ object LocalTerminalManager {
     }
 
     fun autoLaunchServerIfReady(context: Context) {
-        val pkg = context.packageName
-        val isTermux = pkg == "com.termux" || pkg.contains("termux")
-        if (!isTermux) return
-
         if (!LocalEnvironmentManager.isInstalled(context)) {
             Log.d(TAG, "[AutoLaunch] Bootstrap is not installed yet, skipping auto-launch")
             return

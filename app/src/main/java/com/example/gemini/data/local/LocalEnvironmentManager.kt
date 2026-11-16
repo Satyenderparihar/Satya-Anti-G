@@ -395,8 +395,8 @@ object LocalEnvironmentManager {
         File(ubuntuDir, "sys").mkdirs()
         File(ubuntuDir, "root").mkdirs()
         val rootBashrc = File(File(ubuntuDir, "root"), ".bashrc")
-        if (!rootBashrc.exists() || !rootBashrc.readText().contains("/usr/local/sbin")) {
-            rootBashrc.appendText("\nexport PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:\$PATH\n")
+        if (!rootBashrc.exists() || !rootBashrc.readText().contains("/root/.local/bin")) {
+            rootBashrc.appendText("\nexport PATH=/root/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:\$PATH\n")
         }
         // Ubuntu's /etc/zsh/zshrc compinit does ~15k fpath stats under proot (~30s first start)
         val rootZshenv = File(File(ubuntuDir, "root"), ".zshenv")
@@ -407,7 +407,7 @@ object LocalEnvironmentManager {
         val profileD = File(File(ubuntuDir, "etc"), "profile.d").apply { mkdirs() }
         val termuxProfile = File(profileD, "termux-profile.sh")
         termuxProfile.writeText(
-            "export PATH=\"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:\$PATH\"\n" +
+            "export PATH=\"/root/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:\$PATH\"\n" +
             "export HOME=\"/root\"\n" +
             "export USER=\"root\"\n" +
             "export LOGNAME=\"root\"\n" +
@@ -418,6 +418,25 @@ object LocalEnvironmentManager {
         try { Os.chmod(termuxProfile.absolutePath, 420) } catch (_: Exception) {}
 
         ensureRootfsCompatibilityLinks(ubuntuDir)
+
+        // Ensure /root/.local/bin exists and has agy symlink if available in /antigem/bin or /usr/local/bin
+        val rootLocalBin = File(File(ubuntuDir, "root"), ".local/bin").apply { mkdirs() }
+        val usrLocalBin = File(ubuntuDir, "usr/local/bin").apply { mkdirs() }
+        val rootAgy = File(rootLocalBin, "agy")
+        val usrAgy = File(usrLocalBin, "agy")
+        val bundledBridgeAgy = File(getBinDir(context), "agy")
+        if (bundledBridgeAgy.exists() && !rootAgy.exists()) {
+            try {
+                bundledBridgeAgy.copyTo(rootAgy, overwrite = true)
+                rootAgy.setExecutable(true, false)
+                try { Os.chmod(rootAgy.absolutePath, 493) } catch (_: Exception) {}
+            } catch (_: Exception) {}
+        }
+        if (rootAgy.exists() && !usrAgy.exists()) {
+            try {
+                Os.symlink("/root/.local/bin/agy", usrAgy.absolutePath)
+            } catch (_: Exception) {}
+        }
     }
 
     fun ensureRootfsCompatibilityLinks(ubuntuDir: File): Boolean {
@@ -1686,6 +1705,11 @@ object LocalEnvironmentManager {
                 log("Finalizing initial dpkg package triggers...")
                 executeCommand(
                     command = "DEBIAN_FRONTEND=noninteractive dpkg --configure -a",
+                    context = appContext
+                )
+                log("Ensuring curl and ca-certificates are installed in Ubuntu container...")
+                executeCommand(
+                    command = "DEBIAN_FRONTEND=noninteractive apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends curl ca-certificates",
                     context = appContext
                 )
             } else {
